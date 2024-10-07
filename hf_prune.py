@@ -42,7 +42,8 @@ def main(args):
         low_cpu_mem_usage=True if args.torch_version >=1.9 else False
     )
     if args.device != "cpu":
-        model.half()
+        #model.half()
+        model.bfloat16()
     model.to(args.device)
 
     if args.test_before_train:
@@ -228,14 +229,16 @@ def main(args):
     torch.cuda.empty_cache()
 
     if args.save_model:
-        model.half()
+        #model.half()
+        model.bfloat16()
         torch.save({
             'model': model, 
             'tokenizer': tokenizer,
         }, logger.best_checkpoint_path)
     
     if args.eval_device != "cpu":
-        model.half()
+        #model.half()
+        model.bfloat16()
     model.to(args.eval_device)
 
     model.config.pad_token_id = tokenizer.pad_token_id = 0 

@@ -45,7 +45,8 @@ def main(args):
         gradient_accumulation_steps = gradient_accumulation_steps // world_size
 
     if device == 'cuda':
-        model.half()
+        #model.half()
+        model.bfloat16()
 
     tokenizer.pad_token_id = 0
     tokenizer.padding_side = "left"
@@ -181,7 +182,8 @@ def main(args):
             warmup_steps=100,
             num_train_epochs=args.num_epochs,
             learning_rate=args.learning_rate,
-            fp16=True,
+            #fp16=True,
+            bf16=True,
             logging_steps=10,
             logging_first_step=True,
             optim="adamw_torch",
