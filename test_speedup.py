@@ -12,8 +12,8 @@ from transformers.activations import SiLUActivation
 from ptflops import get_model_complexity_info
 from ptflops.pytorch_ops import bn_flops_counter_hook, pool_flops_counter_hook
 
-from LLMPruner.models.hf_llama.modeling_llama import LlamaForCausalLM, LlamaRMSNorm, LlamaAttention, LlamaMLP
-from LLMPruner.peft import PeftModel
+from src.models.hf_llama.modeling_llama import LlamaForCausalLM, LlamaRMSNorm, LlamaAttention, LlamaMLP
+from src.peft import PeftModel
 
 if torch.cuda.is_available():
     device = "cuda"

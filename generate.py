@@ -6,7 +6,7 @@ import torch
 import transformers
 from transformers import GenerationConfig, AutoModelForCausalLM, AutoTokenizer
 
-from LLMPruner.peft import PeftModel
+from src.peft import PeftModel
 
 #from utils.callbacks import Iteratorize, Stream
 #from utils.prompter import Prompter

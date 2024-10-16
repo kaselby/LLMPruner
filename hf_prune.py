@@ -11,14 +11,14 @@ from typing import Tuple
 import torch
 import numpy as np
 from transformers import LlamaTokenizer, GenerationConfig, LlamaConfig
-from LLMPruner.models.hf_llama.modeling_llama import LlamaForCausalLM, LlamaRMSNorm, LlamaAttention, LlamaMLP
+from src.models.hf_llama.modeling_llama import LlamaForCausalLM, LlamaRMSNorm, LlamaAttention, LlamaMLP
 
-import LLMPruner.torch_pruning as tp 
-from LLMPruner.pruner import hf_llama_pruner as llama_pruner
-from LLMPruner.utils.logger import LoggerWithDepth
-from LLMPruner.evaluator.ppl import PPLMetric
-from LLMPruner.datasets.example_samples import get_examples
-from LLMPruner.templates.prompts import prompts
+import src.torch_pruning as tp 
+from src.pruner import hf_llama_pruner as llama_pruner
+from src.utils.logger import LoggerWithDepth
+from src.evaluator.ppl import PPLMetric
+from src.datasets.example_samples import get_examples
+from src.templates.prompts import prompts
 
 def set_random_seed(seed):
     random.seed(seed)

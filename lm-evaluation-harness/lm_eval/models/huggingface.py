@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import transformers
 #import peft
-import LLMPruner.peft as peft
+import src.peft as peft
 from typing import List, Mapping, NewType, Optional, Tuple, Union
 from tqdm import tqdm
 

@@ -13,15 +13,15 @@ import torch
 import transformers
 from datasets import load_dataset
 
-from LLMPruner.peft import (
+from src.peft import (
     LoraConfig,
     get_peft_model,
     get_peft_model_state_dict,
     prepare_model_for_int8_training,
     set_peft_model_state_dict,
 )
-from LLMPruner.utils.prompter import Prompter, ZeroPrompter
-from LLMPruner.datasets.ppl_dataset import get_loaders
+from src.utils.prompter import Prompter, ZeroPrompter
+from src.datasets.ppl_dataset import get_loaders
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -160,7 +160,7 @@ def main(args):
 
     # Load Extra Validation Dataset
     if args.extra_val_dataset:
-        from LLMPruner.datasets.ppl_dataset import get_wikitext2, get_ptb
+        from src.datasets.ppl_dataset import get_wikitext2, get_ptb
 
         seq_len = 128
         for extra_dataset in args.extra_val_dataset.split(','):

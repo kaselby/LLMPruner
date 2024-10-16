@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 
-import LLMPruner.torch_pruning as tp
-from LLMPruner.torch_pruning import BasePruningFunc, ops
+import src.torch_pruning as tp
+from src.torch_pruning import BasePruningFunc, ops
 
 from copy import deepcopy
 import random

@@ -13,15 +13,15 @@ import numpy as np
 from transformers import GenerationConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from LLMPruner.models.hf_bloom.modeling_bloom import BloomForCausalLM
+from src.models.hf_bloom.modeling_bloom import BloomForCausalLM
 
-import LLMPruner.torch_pruning as tp 
-from LLMPruner.pruner import hf_llama_pruner as Pruner
-from LLMPruner.utils.logger import LoggerWithDepth
-from LLMPruner.evaluator.ppl import PPLMetric
-from LLMPruner.datasets.example_samples import get_examples
-from LLMPruner.templates.prompts import prompts
-from LLMPruner.models.helper import reorder_qkv
+import src.torch_pruning as tp 
+from src.pruner import hf_llama_pruner as Pruner
+from src.utils.logger import LoggerWithDepth
+from src.evaluator.ppl import PPLMetric
+from src.datasets.example_samples import get_examples
+from src.templates.prompts import prompts
+from src.models.helper import reorder_qkv
 
 def set_random_seed(seed):
     random.seed(seed)

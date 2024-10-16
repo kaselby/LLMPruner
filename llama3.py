@@ -13,12 +13,12 @@ import numpy as np
 from transformers import LlamaTokenizer, GenerationConfig, LlamaConfig, AutoTokenizer, LlamaForCausalLM
 from transformers.models.llama.modeling_llama import LlamaRMSNorm
 
-import LLMPruner.torch_pruning as tp 
-from LLMPruner.pruner import hf_llama_pruner as llama_pruner
-from LLMPruner.utils.logger import LoggerWithDepth
-from LLMPruner.evaluator.ppl import PPLMetric
-from LLMPruner.datasets.example_samples import get_examples
-from LLMPruner.templates.prompts import prompts
+import src.torch_pruning as tp 
+from src.pruner import hf_llama_pruner as llama_pruner
+from src.utils.logger import LoggerWithDepth
+from src.evaluator.ppl import PPLMetric
+from src.datasets.example_samples import get_examples
+from src.templates.prompts import prompts
 
 def set_random_seed(seed):
     random.seed(seed)

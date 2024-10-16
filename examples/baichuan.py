@@ -13,17 +13,17 @@ import numpy as np
 from transformers import GenerationConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from LLMPruner.models.hf_baichuan.baichuan7B.modeling_baichuan_7B import BaiChuanForCausalLM as BaiChuan7B
-from LLMPruner.models.hf_baichuan.baichuan13B.modeling_baichuan_13B import BaichuanForCausalLM as BaiChuan13B
+from src.models.hf_baichuan.baichuan7B.modeling_baichuan_7B import BaiChuanForCausalLM as BaiChuan7B
+from src.models.hf_baichuan.baichuan13B.modeling_baichuan_13B import BaichuanForCausalLM as BaiChuan13B
 
 #from LLMPruner.models.hf_llama.modeling_llama import LlamaRMSNorm, LlamaAttention, LlamaMLP
 
-import LLMPruner.torch_pruning as tp 
-from LLMPruner.pruner import hf_baichuan_pruner as baichuan_pruner
-from LLMPruner.utils.logger import LoggerWithDepth
-from LLMPruner.evaluator.ppl import PPLMetric
-from LLMPruner.datasets.example_samples import get_examples
-from LLMPruner.templates.prompts import prompts
+import src.torch_pruning as tp 
+from src.pruner import hf_baichuan_pruner as baichuan_pruner
+from src.utils.logger import LoggerWithDepth
+from src.evaluator.ppl import PPLMetric
+from src.datasets.example_samples import get_examples
+from src.templates.prompts import prompts
 
 def set_random_seed(seed):
     random.seed(seed)

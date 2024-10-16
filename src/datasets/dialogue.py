@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 from datasets import load_dataset
 from torch.utils.data.dataset import Dataset
-from LLMPruner.models.hf_chatglm import ChatGLMForConditionalGeneration, ChatGLMTokenizer
+from src.models.hf_chatglm import ChatGLMForConditionalGeneration, ChatGLMTokenizer
 
 
 def load_daily_dialog(tokenizer, n_samples, max_source_len, max_target_len):

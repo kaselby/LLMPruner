@@ -2,7 +2,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-from LLMPruner.datasets.ppl_dataset import get_loaders
+from src.datasets.ppl_dataset import get_loaders
 
 def PPLMetric(model, tokenizer, datasets, seq_len=128, batch_size = 4, device="cuda"):
     metric = {}
